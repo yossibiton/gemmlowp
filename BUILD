@@ -90,6 +90,9 @@ cc_library(
     # "setting 'linkstatic=1' is recommended if there are no object files."
     linkstatic = 1,
     visibility = ["//visibility:public"],
+    copts = [
+        "-DGEMMLOWP_SSE4_64"
+    ],
 )
 
 cc_library(
@@ -107,6 +110,9 @@ cc_library(
     ],
     deps = [
         ":gemmlowp",
+    ],
+    copts = [
+        "-DGEMMLOWP_SSE4_64"
     ],
 )
 
